@@ -1,15 +1,68 @@
-<h1>Beacon</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beacon</title>
 
-<input id="businessName" placeholder="Business Name">
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-<input id="city" placeholder="City">
+<body>
+  <div class="container">
 
-<input id="category" placeholder="Category">
+    <h1 class="logo">Beacon</h1>
 
-<button id="runAudit">
-  Run Audit
-</button>
+    <p class="subtitle">
+      AI Visibility Intelligence
+    </p>
 
-<pre id="output"></pre>
+    <div class="form-group">
+      <label for="businessName">
+        Business Name
+      </label>
+      <input
+        id="businessName"
+        placeholder="Total Restoration of Texas"
+      />
+    </div>
 
-app.jsscript>
+    <div class="form-group">
+      <label for="city">
+        City
+      </label>
+      <input
+        id="city"
+        placeholder="Austin"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="category">
+        Category
+      </label>
+      <input
+        id="category"
+        placeholder="Restoration Services"
+      />
+    </div>
+
+    <button id="runAudit">
+      Run Beacon Audit
+    </button>
+
+    <div class="output">
+      <pre id="output">
+Awaiting observation...
+      </pre>
+    </div>
+
+    <div class="footer">
+      Beacon • Observe → Understand → Recommend
+    </div>
+
+  </div>
+
+  app.jsscript>
+</body>
+</html>
