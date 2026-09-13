@@ -18,34 +18,48 @@ button.addEventListener("click", async () => {
       "category"
     ).value;
 
-  const response =
-    await fetch(
-      "YOUR_BEACON_ENDPOINT",
-      {
-        method: "POST",
+  document.getElementById("output")
+    .textContent =
+    "Running Beacon Audit...";
 
-        headers: {
-          "Content-Type":
-            "application/json"
-        },
+  try {
 
-        body: JSON.stringify({
-          business_name,
-          city,
-          category
-        })
-      }
-    );
+    const response =
+      await fetch(
+        "https://beacon-api-production-f494.up.railway.app/audit",
+        {
+          method: "POST",
 
-  const data =
-    await response.json();
+          headers: {
+            "Content-Type":
+              "application/json"
+          },
 
-  document.getElementById(
-    "output"
-  ).textContent =
-    JSON.stringify(
-      data,
-      null,
-      2
-    );
+          body: JSON.stringify({
+            business_name,
+            city,
+            category
+          })
+        }
+      );
+
+    const data =
+      await response.json();
+
+    document.getElementById(
+      "output"
+    ).textContent =
+      JSON.stringify(
+        data,
+        null,
+        2
+      );
+
+  } catch (error) {
+
+    document.getElementById(
+      "output"
+    ).textContent =
+      `Error: ${error.message}`;
+  }
 });
