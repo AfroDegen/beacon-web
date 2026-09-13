@@ -1,0 +1,2 @@
+# beacon-web
+Frontend skeleton
